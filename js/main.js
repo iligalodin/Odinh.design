@@ -109,6 +109,8 @@ function buildCarousel() {
         }
 
     }
+    
+    //TODO move the image changing into a separate function outside of the buildCarousel loop
     //  create a interval if there is more than one image in the image carousel
     interval = setInterval(function () {
         //  if noLoop is set to false or there is just one image clear the interval
