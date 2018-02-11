@@ -1,0 +1,13 @@
+@keyframes sidehide {
+    to {
+        flex: .01;
+        flex: .00001;
+    }
+}
+
+@keyframes sideshow {
+    to {
+        flex: .00001;
+        flex: .43;
+    }
+}

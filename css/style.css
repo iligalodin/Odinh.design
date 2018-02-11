@@ -1,0 +1,141 @@
+/*-------------------------------------
+/* the design and the functionallity
+/* of this website is copyright of
+/* Odinn Hullekes @ Odinh.Design
+/* E-mail   :  Info@Odinh.Design
+/* Website  :  Odinh.design
+/*-----------------------------------*/
+
+/*----- default styling -----*/
+
+@font-face {
+    font-family: Avenir;
+    src: url('../fonts/Avenir.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Avenir;
+    color: #27282a;
+    display: -webkit-flex;
+    display: flex;
+    font-variation-settings: 'wght' 100, 'wdth' 88.6799;
+}
+
+/*-----          -----*/
+
+/*----- carousel -----*/
+
+#side {
+    overflow: hidden;
+    -webkit-flex: .43;
+    -ms-flex: .43;
+    flex: .43;
+    height: 100vh;
+}
+
+#carousel {
+    width: 100%;
+    transition: margin .6s;
+}
+
+.carousel-element {
+    height: 100vh;
+    width: 100%;
+}
+
+.carousel-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*-----      -----*/
+
+/*----- main -----*/
+
+#main {
+    -webkit-flex: .67;
+    -ms-flex: .67;
+    flex: .67;
+    position: relative;
+    padding-top: 120px;
+    transition: flex;
+    text-align: right;
+    height: 100%;
+}
+
+#main a {
+    text-decoration: none;
+    color: #27282a;
+}
+
+#main #title {
+    margin-right: 80px;
+    font-size: 78.31pt;
+    font-variation-settings: 'wght' 519, 'wdth' 95;
+}
+
+#main #title #subtitle {
+    display: block;
+    position: relative;
+    left: -133px;
+    top: -30px;
+    font-size: 20pt;
+    font-variation-settings: 'wght' 400, 'wdth' 86;
+}
+
+#main #mark {
+    color: white;
+    text-align: center;
+    line-height: 180px;
+    position: absolute;
+    left: 80px;
+    top: 0px;
+    width: 80px;
+    height: 120px;
+    background-color: #27282a;
+}
+
+/*-----            -----*/
+
+/*----- navigation -----*/
+
+#main #menu {
+    list-style-type: none;
+    line-height: 36pt;
+}
+
+
+
+#main #menu li {
+    font-size: 25px;
+    float: right;
+    clear: both;
+}
+
+/*TODO line fatter when hover, transition makes line page wide*/
+
+#main #menu .nav-line {
+    width: 120px;
+    height: 1px;
+    border-bottom: solid #27282a 1px;
+    position: relative;
+    right: 0;
+    display: inline;
+    transition: width 0.5s;
+}
+
+#main #menu .nav-item {
+    margin-right: 80px;
+
+}
+
+
+
+/*----- -----*/
