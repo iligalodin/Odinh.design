@@ -9,9 +9,7 @@
 //----- global var declaration ---//
 var index = index,
     nav,
-    pages = index.menu.pages,
     carousel,
-    carouselImages = index.carousel,
     carouselLoop,
     carouselCounter = 1,
     reverse = false,
@@ -27,8 +25,7 @@ function getID(x) {
     //  basicallt changes document.getElementById("foo") to getID("foo")
     return document.getElementById(x);
 }
-// CHANGES made the addAttributes function obsolete and replaced it with a better function: createElement
-// CHANGES made a createElement function to declutter the code used in the buildCarousel and buildMenu functions
+
 function createElement(type, object) {
     "use strict";
     var element, key;
@@ -40,84 +37,56 @@ function createElement(type, object) {
     }
     return element;
 }
+
 //-----  -----/
 
 //----- these functions are for building the page dynamically, -----//
-function buildMenu() {
+function buildIndex() {
     "use strict";
-    //  function to build the menu and the lines underneath it
-    var key,
-        page = pages,
-        navLink,
-        navLine,
-        navItem;
+    var page = index.menu.pages, images = index.carousel,
+        key,
+        navLink, navLine, navItem,
+        carouselItem, carouselImage;
 
-    for (key in page) {
-        if (page.hasOwnProperty(key)) {
-            //
-            //  creates an <a> element and adds the link to it
-            //  creates a <li> element and adds the title to it
-            //  creates an empty <li> item that is the underline
-            navLink = createElement("A", {
-                "href": page[key].href
-            });
-            navLine = createElement("LI", {
-                "class": "nav-line"
-            });
-            navItem = createElement("LI", index.menu.attributes);
-            navLink.innerHTML = page[key].title;
-            navItem.appendChild(navLink);
-            nav.appendChild(navItem);
-            nav.appendChild(navLine);
-        }
-    }
-}
+    // menu building
+    for (key in page) { if (page.hasOwnProperty(key)) {
+        navLink = createElement("A", {
+            "href": page[key].href
+        });
+        navItem = createElement("LI", index.menu.attributes);
+        navLine = createElement("LI", {
+            "class": "nav-line"
+        });
 
-function buildCarousel() {
-    "use strict";
-    //  function to build the carousel and set it to change the displayed image each minute
-    var key,
-        images = carouselImages,
-        carouselItem,
-        carouselImage;
+        navLink.innerHTML = page[key].title;
 
-    for (key in images) {
-        if (images.hasOwnProperty(key)) {
-            //
-            //  create a <section> element with the class "carousel-element"
-            //  also create an <img> element and add the class "carousel-image"
-            //  set the source of the element to index.carousel object that the loop is on
-            //  set the source to the name of the element to index.carousel the loop is on
-            //  then put the img element into the section element
-            //  then put the section element into the carousel element
-            //  and start all over again untill the loop went through all the images in the 
-            //  index.carousel object
-            //
-            // TODO create a universal BUILD function for creating elements within elements
-            carouselItem = createElement("SECTION", {
-                "class": "carousel-element"
-            });
-            carouselImage = createElement("IMG", {
-                "class": "carousel-image",
-                "src": images[key].src,
-                "name": images[key].name
-            });
-            carouselItem.appendChild(carouselImage);
-            carousel.appendChild(carouselItem);
-        }
+        nav.appendChild(navItem).appendChild(navLink);
+        nav.appendChild(navLine);
+    } }
+    
+    // image carousel building
+    for (key in images) { if (images.hasOwnProperty(key)) {
 
-    }
-   // CHANGES moved the image changing loop outside of the buildCarousel loop
+        carouselItem = createElement("SECTION", {
+            "class": "carousel-element"
+        });
+        carouselImage = createElement("IMG", {
+            "class": "carousel-image",
+            "src": images[key].src,
+            "name": images[key].name
+        });
+
+        carousel.appendChild(carouselItem).appendChild(carouselImage);
+    } }
 }
 
 function changeImage(setImage, setCounter) {
     "use strict";
-    // TODO [x]move the image changing into a separate function outside of the buildCarousel loop
     // TODO tidy up the changeImage function
     // NOTE this fuction allows the user to change the image whenever
     var setimage = setImage || false,
         setcounter = setCounter || 0,
-        images = carouselImages,
+        images = index.carousel,
         height;
     //  if noLoop is set to false or there is just one image clear the interval
     if (noLoop === true || Object.keys(images).length === 1) {
@@ -136,6 +105,7 @@ function changeImage(setImage, setCounter) {
     carousel.style.marginTop = "-" + (height * (carouselCounter)) + "px";
     if (setImage) {
         carousel.style.marginTop = "-" + (height * (setcounter)) + "px";
+        carouselCounter = setCounter;
         return;
     }
     //  stuff to make sure it checks if it needs to go forward or reverse
@@ -165,12 +135,13 @@ function menuOut(x) {
 //---- IMPORTANT FUNCTIONS ----//
 function initialize() {
     "use strict";
-     //  the function that makes sure that the page builds
+    //  the function that makes sure that the page builds
     //  this gets called when the body is loaded
     nav = getID("menu");
     carousel = getID("carousel");
-    buildMenu();
-    buildCarousel();
-    carouselLoop = setInterval(function () {changeImage(); }, carouselInterval);
+    buildIndex();
+    //    buildCarousel();
+    carouselLoop = setInterval(function () {
+        changeImage();
+    }, carouselInterval);
 }
-
