@@ -27,13 +27,11 @@ function getID(x) {
     //  basicallt changes document.getElementById("foo") to getID("foo")
     return document.getElementById(x);
 }
-
 // CHANGES made the addAttributes function obsolete and replaced it with a better function: createElement
 // CHANGES made a createElement function to declutter the code used in the buildCarousel and buildMenu functions
 function createElement(type, object) {
     "use strict";
-    var element,
-        key;
+    var element, key;
     element = document.createElement(type);
     for (key in object) {
         if (object.hasOwnProperty(key)) {
@@ -42,7 +40,6 @@ function createElement(type, object) {
     }
     return element;
 }
-
 //-----  -----/
 
 //----- these functions are for building the page dynamically, -----//
@@ -60,23 +57,21 @@ function buildMenu() {
             //
             //  creates an <a> element and adds the link to it
             //  creates a <li> element and adds the title to it
-            //  adds a whole array of attributes which i am lazy to actually type here myself
-            //  creates an empty <li> item that will become the underline
-            //  adds the class "nav-line" to the empty <li>
-            //  adds the "nav-item" <li> to the menu element
-            //  adds the "nav-line" <li> to the menu element
-            //
-            navLink = createElement("A", {"href": page[key].href});
-            navLine = createElement("LI", {"class": "nav-line"});
+            //  creates an empty <li> item that is the underline
+            navLink = createElement("A", {
+                "href": page[key].href
+            });
+            navLine = createElement("LI", {
+                "class": "nav-line"
+            });
             navItem = createElement("LI", index.menu.attributes);
-            navLink.appendChild(document.createTextNode(page[key].title));
+            navLink.innerHTML = page[key].title;
             navItem.appendChild(navLink);
             nav.appendChild(navItem);
             nav.appendChild(navLine);
         }
     }
 }
-
 
 function buildCarousel() {
     "use strict";
@@ -99,7 +94,9 @@ function buildCarousel() {
             //  index.carousel object
             //
             // TODO create a universal BUILD function for creating elements within elements
-            carouselItem = createElement("SECTION", {"class": "carousel-element"});
+            carouselItem = createElement("SECTION", {
+                "class": "carousel-element"
+            });
             carouselImage = createElement("IMG", {
                 "class": "carousel-image",
                 "src": images[key].src,
@@ -110,22 +107,19 @@ function buildCarousel() {
         }
 
     }
-    
    // CHANGES moved the image changing loop outside of the buildCarousel loop
-    
 }
-
 
 function changeImage(setImage, setCounter) {
     "use strict";
     // TODO [x]move the image changing into a separate function outside of the buildCarousel loop
+    // TODO tidy up the changeImage function
     // NOTE this fuction allows the user to change the image whenever
     var setimage = setImage || false,
         setcounter = setCounter || 0,
         images = carouselImages,
         height;
-   
-        //  if noLoop is set to false or there is just one image clear the interval
+    //  if noLoop is set to false or there is just one image clear the interval
     if (noLoop === true || Object.keys(images).length === 1) {
         clearInterval(carouselLoop);
         return;
@@ -136,7 +130,6 @@ function changeImage(setImage, setCounter) {
     if (carouselCounter === 0) {
         reverse = false;
     }
-
     //  some fancy smancy stuff to make sure it actually scrolls the next image revealing it 
     //  whole
     height = document.body.clientHeight;
@@ -153,7 +146,6 @@ function changeImage(setImage, setCounter) {
     carouselCounter += 1;
     return;
 }
-
 //-----  -----//
 
 //----- no special purpoise functions -----//
