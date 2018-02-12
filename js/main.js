@@ -13,7 +13,7 @@ var index = index,
     carouselLoop,
     carouselCounter = 1,
     reverse = false,
-    carouselInterval = 4000,
+    carouselInterval = 800,
     noLoop = false; //  <- trigger to stop all loops (which is a total of one at this moment)
 //----- -----//
 
@@ -82,13 +82,18 @@ function buildIndex() {
 
 function changeImage(setImage, setCounter) {
     "use strict";
+    // TODO [x]move the image changing into a separate function outside of the buildCarousel loop
     // TODO tidy up the changeImage function
     // NOTE this fuction allows the user to change the image whenever
     var setimage = setImage || false,
         setcounter = setCounter || 0,
         images = index.carousel,
-        height;
+        height,
+        test = 1;
+    
+    height = document.body.clientHeight;
     //  if noLoop is set to false or there is just one image clear the interval
+    
     if (noLoop === true || Object.keys(images).length === 1) {
         clearInterval(carouselLoop);
         return;
@@ -101,7 +106,7 @@ function changeImage(setImage, setCounter) {
     }
     //  some fancy smancy stuff to make sure it actually scrolls the next image revealing it 
     //  whole
-    height = document.body.clientHeight;
+
     carousel.style.marginTop = "-" + (height * (carouselCounter)) + "px";
     if (setImage) {
         carousel.style.marginTop = "-" + (height * (setcounter)) + "px";
@@ -111,7 +116,7 @@ function changeImage(setImage, setCounter) {
     //  stuff to make sure it checks if it needs to go forward or reverse
     if (reverse) {
         carouselCounter -= 1;
-        return "reverse";
+        return;
     }
     carouselCounter += 1;
     return;
