@@ -7,7 +7,6 @@
 /*-----------------------------------*/
 
 /*----- default styling -----*/
-
 @font-face {
     font-family: Avenir;
     src: url('../fonts/Avenir.ttf');
@@ -18,6 +17,13 @@
     margin: 0;
     padding: 0;
 }
+html, body{
+    height: 100%;
+}
+@media only screen and (min-width: 1000px) {
+
+
+
 
 body {
     font-family: Avenir;
@@ -37,9 +43,11 @@ body {
     -ms-flex: .43;
     flex: .43;
     height: 100vh;
+    display:block;
 }
 
 #carousel {
+    display:inherit;
     width: 100%;
     transition: margin .6s;
 }
@@ -139,3 +147,4 @@ body {
 
 
 /*----- -----*/
+}

@@ -28,6 +28,22 @@ var prefix = "images/carousel/",
             b: {
                 name: "Consumer Basics - Art Project",
                 src: prefix + "basic.jpg"
+            },
+            c: {
+                name: "Black Heart - Clothing Co.",
+                src: prefix + "blackheart.jpg"
+            },
+            d: {
+                name: "Consumer Basics - Art Project",
+                src: prefix + "basic.jpg"
+            },
+            e: {
+                name: "Black Heart - Clothing Co.",
+                src: prefix + "blackheart.jpg"
+            },
+            f: {
+                name: "Consumer Basics - Art Project",
+                src: prefix + "basic.jpg"
             }
         },
         "menu": {
@@ -45,12 +61,24 @@ var prefix = "images/carousel/",
                 //  also make sure there is no comma at the end of the last object
                 // 
                 1: { //TODO create "Personal Information" page
-                    title: "Website under development",
-                    href: "#"
+                    title: "Personal Information",
+                    href: "#Personal-Information"
                 },
                 2: { //TODO create "Interactive Design" page
-                    title: "Contact Me",
-                    href: "mailto:me@odinh.design?subject=Odinh%20Design%20subject%20of%20the%20mail"
+                    title: "Interactive Design",
+                    href: "#Interactive-Design"
+                },
+                3: { //TODO create "Page Layout" page
+                    title: "Page Layout",
+                    href: "#Page-Layout"
+                },
+                4: { //TODO create "Graphic Design" page
+                    title: "Graphic Design",
+                    href: "#Graphic-Design"
+                },
+                5: { //TODO create "Other Project" page
+                    title: "Other Projects",
+                    href: "#Other-Projects"
                 }
             },
             "attributes": {

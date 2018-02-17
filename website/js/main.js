@@ -13,7 +13,7 @@ var index = index,
     carouselLoop,
     carouselCounter = 1,
     reverse = false,
-    carouselInterval = 800,
+    carouselInterval = 8000,
     noLoop = false; //  <- trigger to stop all loops (which is a total of one at this moment)
 //----- -----//
 
@@ -88,8 +88,7 @@ function changeImage(setImage, setCounter) {
     var setimage = setImage || false,
         setcounter = setCounter || 0,
         images = index.carousel,
-        height,
-        test = 1;
+        height;
     
     height = document.body.clientHeight;
     //  if noLoop is set to false or there is just one image clear the interval
@@ -108,7 +107,7 @@ function changeImage(setImage, setCounter) {
     //  whole
 
     carousel.style.marginTop = "-" + (height * (carouselCounter)) + "px";
-    if (setImage) {
+    if (setimage) {
         carousel.style.marginTop = "-" + (height * (setcounter)) + "px";
         carouselCounter = setCounter;
         return;
