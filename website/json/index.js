@@ -45,10 +45,30 @@ var prefix = "images/carousel/",
                 //  also make sure there is no comma at the end of the last object
                 // 
                 1: { //TODO create "Personal Information" page
+                    title: "<s>Personal Information</s>",
+                    href: "#Personal-Information"
+                },
+                2: { //TODO create "Interactive Design" page
+                    title: "<s>Interactive Desig</s>n",
+                    href: "#Interactive-Design"
+                },
+                3: { //TODO create "Page Layout" page
+                    title: "<s>Page Layout</s>",
+                    href: "#Page-Layout"
+                },
+                4: { //TODO create "Graphic Design" page
+                    title: "<s>Graphic Design</s>",
+                    href: "#Graphic-Design"
+                },
+                5: { //TODO create "Other Project" page
+                    title: "<s>Other Projects</s>",
+                    href: "#Other-Projects"
+                },
+                6: { //TODO create "Personal Information" page
                     title: "Website under development",
                     href: "#"
                 },
-                2: { //TODO create "Interactive Design" page
+                7: { //TODO create "Interactive Design" page
                     title: "Contact Me",
                     href: "mailto:me@odinh.design?subject=Odinh%20Design%20subject%20of%20the%20mail"
                 }
