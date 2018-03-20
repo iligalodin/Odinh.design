@@ -20,6 +20,27 @@
 html, body{
     height: 100%;
 }
+i{
+    font-weight: 600;
+}
+#personal-information{
+    margin-top: 20px;
+    list-style: none;
+    position: absolute;
+    width: 400px;
+    bottom:8px;
+    left: 8px;
+    border: 1px solid #000;
+    padding:16px;
+}
+.left-li{
+float:left;
+    text-decoration: underline;
+}
+
+#personal-information ul li span{
+
+}
 @media only screen and (min-width: 1000px) {
 
 

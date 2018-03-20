@@ -49,8 +49,8 @@ var prefix = "images/carousel/",
                     href: "mailto:me@odinh.design?subject=Odinh%20Design%20subject%20of%20the%20mail"
                 },
                 1: { //TODO create "Personal Information" page
-                    title: "<s>Personal Information</s>",
-                    href: "#Personal-Information"
+                    title: "Personal Information",
+                    href: "/personal-information.html"
                 },
                 2: { //TODO create "Interactive Design" page
                     title: "<s>Interactive Desig</s>n",

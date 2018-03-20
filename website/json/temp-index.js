@@ -1,10 +1,10 @@
-//-------------------------------------
-//   the design and the functionallity
-//   of this website is copyright of
-//   Odinn Hullekes @ Odinh.Design
-//   E-mail   :  Info@Odinh.Design
-//   Website  :  Odinh.design
-//-----------------------------------
+//---------------------------------------//
+//   the design and the functionallity   //
+//   of this website is copyright of     //
+//   Odinn Hullekes @ Odinh.Design       //
+//   E-mail   :  Info@Odinh.Design       //
+//   Website  :  Odinh.design            //
+//---------------------------------------//
 
 
 var prefix = "images/carousel/",
