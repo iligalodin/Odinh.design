@@ -27,11 +27,12 @@ i{
     margin-top: 20px;
     list-style: none;
     position: absolute;
-    width: 400px;
+    width: 90%;
     bottom:8px;
     left: 8px;
     border: 1px solid #000;
     padding:16px;
+    margin:0 auto;
 }
 .left-li{
 float:left;
@@ -43,7 +44,11 @@ float:left;
 }
 @media only screen and (min-width: 1000px) {
 
-
+#personal-information{
+    width: 400px;
+    left:0;
+    margin:8px;
+}
 
 
 body {
