@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--                                   -->
+<!-- the design and the functionallity -->
+<!-- of this website is copyright of   -->
+<!-- Odinn Hullekes @ Odinh.Design     -->
+<!-- E-mail   :  Info@Odinh.Design     -->
+<!-- Website  :  Odinh.design          -->
+<!--                                   -->
+
+<html lang="eng">
+
+<!--TODO move the begin to a separate file-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favico/favicon-16x16.png">
+    <link rel="manifest" href="favico/site.webmanifest">
+    <link rel="mask-icon" href="favico/safari-pinned-tab.svg" color="#27282a">
+    <link rel="shortcut icon" href="favico/favicon.ico">
+
+    <meta name="msapplication-TileColor" content="#ff0000">
+    <meta name="msapplication-config" content="favico/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--NOTE possible animation for page transfer-->
+    <!--<link rel="stylesheet" href="css/animations.css">-->
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="json/index.js"></script>
+
+    <title>Personal info - Odin.Design</title>
+</head>
+
+<body onload="">
+
+    <aside id="side">
+        <img class="carousel-image" src="images/carousel/blackheart.jpg">
+    </aside>
+    <main id="main" name="main-page" class="h100">
+        <div id="mark"> <sup>L</sup>/<sub>XL</sub></div>
+
+        <h1 id="title">
+            <a href="/index.html">Odinh.Design</a>
+            <sub id="subtitle">creative by choice</sub>
+        </h1>
+        <ul id="personal-information">
+            <li>
+                <span class="left-li">Name:</span>
+                <span class="right-li">Odinn Hullekes</span>
+            </li>
+            <li>
+                <span class="left-li">Best Before:</span>
+                <span class="right-li">13-03-1994</span>
+            </li>
+            <li><br></li>
+            <li>
+                <span class="left-li">Skills:</span>
+                <span class="right-li">Illustrator</span>
+            </li>
+            <li>
+                <span class="right-li">Indesign</span>
+            </li>
+            <li>
+                <span class="right-li">Photoshop</span>
+            </li>
+            <li><br></li>
+            <li>
+                <span class="left-li">Short Bio:</span>
+                <span class="right-li">
+                    I am a creative thinker, ive worked on a couple small projects for Digital entertainers.
+                    <br> The work I do is either digital or physical design, I like to work with my mind and my hands.
+                    <br> More notable projects i've worked on are for the <i>René Lalique Musee - Doesburg</i>,
+                    <br> a YouTube channel <i>Bit More Dave / Dave The Rave</i> and a Twitch Livestream group <i>Team Evil</i>
+                </span>
+            </li>
+
+        </ul>
+    </main>
+    <script>
+        var currentTime = new Date();
+        var month = currentTime.getMonth() + 1;
+        var year = currentTime.getFullYear();
+        if (month < 3) {
+            year -= 1;
+        }
+        document.getElementById("age").innerHTML = "Age: " + (year - 1994);
+    </script>
+</body>
+</html>
